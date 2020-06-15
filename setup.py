@@ -34,7 +34,7 @@ setuptools.setup(
         'Natural Language :: ' + cfg['language'].title(),
     ] + ['Programming Language :: Python :: '+o for o in py_versions[py_versions.index(min_python):]],
     url = cfg['git_url'],
-    packages = setuptools.find_packages(),
+    packages = setuptools.find_packages(exclude=["data"]),
     include_package_data = True,
     install_requires = requirements,
     dependency_links = cfg.get('dep_links','').split(),
